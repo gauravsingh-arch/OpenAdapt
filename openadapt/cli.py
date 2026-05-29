@@ -24,9 +24,11 @@ from typing import Optional
 
 import click
 
+from openadapt.version import __version__
+
 
 @click.group()
-@click.version_option(version="1.0.0", prog_name="openadapt")
+@click.version_option(version=__version__, prog_name="openadapt")
 def main():
     """OpenAdapt - GUI automation with ML.
 
@@ -63,7 +65,7 @@ def capture():
 @capture.command("start")
 @click.option("--name", "-n", required=True, help="Name for the capture session")
 @click.option("--video/--no-video", default=True, help="Record video")
-@click.option("--audio/--no-audio", default=False, help="Record audio")
+@click.option("--audio/--no-audio", default=True, help="Record audio")
 def capture_start(name: str, video: bool, audio: bool):
     """Start a new capture session."""
     try:
@@ -183,6 +185,14 @@ def train():
     pass
 
 
+_MODEL_ALIASES = {
+    "qwen3vl-2b": "Qwen/Qwen3-VL-2B-Instruct",
+    "qwen3vl-7b": "Qwen/Qwen3-VL-7B-Instruct",
+    "qwen25vl-7b": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "qwen25vl-2b": "Qwen/Qwen2.5-VL-2B-Instruct",
+}
+
+
 @train.command("start")
 @click.option("--capture", "-c", required=True, help="Path to capture directory")
 @click.option("--model", "-m", default="qwen3vl-2b", help="Model to train")
@@ -194,25 +204,64 @@ def train_start(
 ):
     """Start model training."""
     try:
+        import tempfile
+
+        import yaml
+        from openadapt_ml.scripts.train import main as _train_main
+    except ImportError:
+        click.echo("Error: openadapt-ml not installed.", err=True)
+        click.echo("Install with: pip install openadapt-ml", err=True)
+        sys.exit(1)
+
+    try:
         click.echo("Starting training...")
         click.echo(f"  Capture: {capture}")
         click.echo(f"  Model: {model}")
         click.echo(f"  Output: {output}")
 
-        # Import and run training
-        from openadapt_ml.scripts.train import train_main
+        model_name = _MODEL_ALIASES.get(model, model)
 
-        train_main(
-            capture=capture,
-            model=model,
-            config=config,
-            output_dir=output,
-            open_dashboard=open,
-        )
+        if config:
+            config_path = config
+            tmp = None
+        else:
+            cfg = {
+                "model": {"name": model_name, "load_in_4bit": False},
+                "lora": {
+                    "r": 16,
+                    "lora_alpha": 32,
+                    "lora_dropout": 0.0,
+                    "finetune_vision_layers": False,
+                },
+                "training": {
+                    "num_train_epochs": 3,
+                    "per_device_train_batch_size": 1,
+                    "gradient_accumulation_steps": 4,
+                    "learning_rate": 2e-4,
+                    "output_dir": output,
+                },
+            }
+            tmp = tempfile.NamedTemporaryFile(
+                mode="w", suffix=".yaml", delete=False
+            )
+            yaml.dump(cfg, tmp)
+            tmp.flush()
+            config_path = tmp.name
 
-    except ImportError:
-        click.echo("Error: openadapt-ml not installed.", err=True)
-        click.echo("Install with: pip install openadapt-ml", err=True)
+        try:
+            _train_main(
+                config_path=config_path,
+                capture_path=capture,
+                output_dir=output,
+                open_dashboard=open,
+            )
+        finally:
+            if tmp is not None:
+                import os
+                os.unlink(tmp.name)
+
+    except Exception as e:
+        click.echo(f"Error: {e}", err=True)
         sys.exit(1)
 
 

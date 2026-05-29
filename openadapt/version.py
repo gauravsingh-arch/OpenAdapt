@@ -1,3 +1,8 @@
 """Version information for the OpenAdapt meta-package."""
 
-__version__ = "1.0.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    __version__ = version("openadapt")
+except PackageNotFoundError:
+    __version__ = "unknown"
