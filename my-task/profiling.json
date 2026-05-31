@@ -1,0 +1,45 @@
+{
+  "duration_seconds": 44.43,
+  "main_thread": false,
+  "platform": "darwin",
+  "python_version": "3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "threads_started": [
+    "screen_event_reader",
+    "keyboard_event_reader",
+    "mouse_event_reader",
+    "event_processor",
+    "screen_event_writer",
+    "action_event_writer",
+    "video_writer",
+    "audio_recorder",
+    "perf_stats_writer",
+    "mem_writer"
+  ],
+  "thread_count": 6,
+  "event_counts": {
+    "action": 77,
+    "screen": 15,
+    "window": 0,
+    "browser": 0,
+    "video": 15
+  },
+  "screen_timing": {
+    "iterations": 140,
+    "screenshot_avg_ms": 32.1,
+    "screenshot_max_ms": 119.8,
+    "screenshot_min_ms": 26.4,
+    "total_avg_ms": 103.4,
+    "total_max_ms": 210.4
+  },
+  "config": {
+    "RECORD_VIDEO": true,
+    "RECORD_AUDIO": true,
+    "RECORD_IMAGES": false,
+    "RECORD_WINDOW_DATA": false,
+    "RECORD_BROWSER_EVENTS": false,
+    "RECORD_FULL_VIDEO": false,
+    "PLOT_PERFORMANCE": true,
+    "SCREEN_CAPTURE_FPS": 10.0
+  },
+  "capture_dir": "/Users/gaurav.singh/Desktop/OpenAdapt_Claude_CLI/OpenAdapt/my-task"
+}
