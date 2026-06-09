@@ -5,15 +5,15 @@ Module: __init__.py
 
 # flake8: noqa
 
-from openadapt.strategies.base import BaseReplayStrategy
-from openadapt.strategies.visual_browser import VisualBrowserReplayStrategy
+from legacy.openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.strategies.visual_browser import VisualBrowserReplayStrategy
 
 # disabled because importing is expensive
-# from openadapt.strategies.demo import DemoReplayStrategy
-from openadapt.strategies.naive import NaiveReplayStrategy
-from openadapt.strategies.segment import SegmentReplayStrategy
-from openadapt.strategies.stateful import StatefulReplayStrategy
-from openadapt.strategies.vanilla import VanillaReplayStrategy
-from openadapt.strategies.visual import VisualReplayStrategy
+# from legacy.openadapt.strategies.demo import DemoReplayStrategy
+from legacy.openadapt.strategies.naive import NaiveReplayStrategy
+from legacy.openadapt.strategies.segment import SegmentReplayStrategy
+from legacy.openadapt.strategies.stateful import StatefulReplayStrategy
+from legacy.openadapt.strategies.vanilla import VanillaReplayStrategy
+from legacy.openadapt.strategies.visual import VisualReplayStrategy
 
 # add more strategies here

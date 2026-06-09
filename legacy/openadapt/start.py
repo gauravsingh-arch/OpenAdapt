@@ -6,7 +6,7 @@ Usage:
 
 import subprocess
 
-from openadapt.custom_logger import logger
+from legacy.openadapt.custom_logger import logger
 
 
 def main() -> None:

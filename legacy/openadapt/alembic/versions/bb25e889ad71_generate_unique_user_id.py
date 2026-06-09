@@ -11,7 +11,7 @@ import json
 from alembic import op
 import sqlalchemy as sa
 
-from openadapt.config import config
+from legacy.openadapt.config import config
 
 # revision identifiers, used by Alembic.
 revision = "bb25e889ad71"

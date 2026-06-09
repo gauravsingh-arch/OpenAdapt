@@ -4,9 +4,9 @@ from typing import List
 
 from PIL import Image
 
-from openadapt.build_utils import redirect_stdout_stderr
-from openadapt.custom_logger import logger
-from openadapt.spacy_model_helpers import download_spacy_model
+from legacy.openadapt.build_utils import redirect_stdout_stderr
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.spacy_model_helpers import download_spacy_model
 
 with redirect_stdout_stderr():
     from presidio_analyzer import AnalyzerEngine
@@ -17,10 +17,10 @@ with redirect_stdout_stderr():
 import spacy
 import spacy_transformers  # pylint: disable=unused-import # noqa: F401
 
-from openadapt.build_utils import is_running_from_executable
-from openadapt.config import config
-from openadapt.privacy.base import Modality, ScrubbingProvider, TextScrubbingMixin
-from openadapt.privacy.providers import ScrubProvider
+from legacy.openadapt.build_utils import is_running_from_executable
+from legacy.openadapt.config import config
+from legacy.openadapt.privacy.base import Modality, ScrubbingProvider, TextScrubbingMixin
+from legacy.openadapt.privacy.providers import ScrubProvider
 
 
 class PresidioScrubbingProvider(

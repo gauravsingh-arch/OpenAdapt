@@ -5,8 +5,8 @@ import time
 
 from loguru import logger as loguru_logger
 
-from openadapt.build_utils import get_log_file_path, is_running_from_executable
-from openadapt.config import config
+from legacy.openadapt.build_utils import get_log_file_path, is_running_from_executable
+from legacy.openadapt.config import config
 
 MESSAGE_TIMESTAMPS = defaultdict(list)
 

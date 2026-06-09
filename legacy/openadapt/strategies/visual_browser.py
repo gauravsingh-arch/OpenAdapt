@@ -10,8 +10,8 @@ from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw
 import numpy as np
 
-from openadapt import adapters, common, models, plotting, strategies, utils, vision
-from openadapt.custom_logger import logger
+from legacy.openadapt import adapters, common, models, plotting, strategies, utils, vision
+from legacy.openadapt.custom_logger import logger
 
 DEBUG = True
 DEBUG_REPLAY = False

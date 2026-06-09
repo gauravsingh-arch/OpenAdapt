@@ -5,8 +5,8 @@ Usage: python -m openadapt.db.list
 
 from sys import stdout
 
-from openadapt.custom_logger import logger
-from openadapt.db import crud
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db import crud
 
 
 def main() -> None:

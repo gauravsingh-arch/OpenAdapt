@@ -5,18 +5,18 @@ Usage:
     $ python -m openadapt.replay DemoReplayStrategy
 """
 
-from openadapt.custom_logger import logger
-from openadapt.db import crud
-from openadapt.models import Recording, Screenshot, WindowEvent
-from openadapt.strategies.base import BaseReplayStrategy
-from openadapt.strategies.mixins.ascii import ASCIIReplayStrategyMixin
-from openadapt.strategies.mixins.huggingface import (
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db import crud
+from legacy.openadapt.models import Recording, Screenshot, WindowEvent
+from legacy.openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.strategies.mixins.ascii import ASCIIReplayStrategyMixin
+from legacy.openadapt.strategies.mixins.huggingface import (
     MAX_INPUT_SIZE,
     HuggingFaceReplayStrategyMixin,
 )
-from openadapt.strategies.mixins.ocr import OCRReplayStrategyMixin
-from openadapt.strategies.mixins.sam import SAMReplayStrategyMixin
-from openadapt.strategies.mixins.summary import SummaryReplayStrategyMixin
+from legacy.openadapt.strategies.mixins.ocr import OCRReplayStrategyMixin
+from legacy.openadapt.strategies.mixins.sam import SAMReplayStrategyMixin
+from legacy.openadapt.strategies.mixins.summary import SummaryReplayStrategyMixin
 
 
 class DemoReplayStrategy(

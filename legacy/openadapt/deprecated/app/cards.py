@@ -7,8 +7,8 @@ from datetime import datetime
 import multiprocessing
 import time
 
-from openadapt.record import record
-from openadapt.utils import WrapStdout
+from legacy.openadapt.record import record
+from legacy.openadapt.utils import WrapStdout
 
 
 class RecordProc:

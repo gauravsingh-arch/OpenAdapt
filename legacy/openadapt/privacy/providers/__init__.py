@@ -40,11 +40,11 @@ class ScrubProvider:
         if provider not in cls.get_available_providers():
             raise ValueError(f"Provider {provider} is not supported.")
         if provider == cls.PRESIDIO:
-            from openadapt.privacy.providers.presidio import PresidioScrubbingProvider
+            from legacy.openadapt.privacy.providers.presidio import PresidioScrubbingProvider
 
             return PresidioScrubbingProvider()
         elif provider == cls.PRIVATE_AI:
-            from openadapt.privacy.providers.private_ai import (
+            from legacy.openadapt.privacy.providers.private_ai import (
                 PrivateAIScrubbingProvider,
             )
 

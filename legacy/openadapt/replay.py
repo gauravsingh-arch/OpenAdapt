@@ -9,18 +9,18 @@ import multiprocessing
 import multiprocessing.connection
 import os
 
-from openadapt.build_utils import redirect_stdout_stderr
-from openadapt.custom_logger import logger
+from legacy.openadapt.build_utils import redirect_stdout_stderr
+from legacy.openadapt.custom_logger import logger
 
 with redirect_stdout_stderr():
     import fire
 
-from openadapt import capture as _capture
-from openadapt import utils
-from openadapt.config import CAPTURE_DIR_PATH, print_config
-from openadapt.db import crud
-from openadapt.error_reporting import configure_error_reporting
-from openadapt.models import Recording
+from legacy.openadapt import capture as _capture
+from legacy.openadapt import utils
+from legacy.openadapt.config import CAPTURE_DIR_PATH, print_config
+from legacy.openadapt.db import crud
+from legacy.openadapt.error_reporting import configure_error_reporting
+from legacy.openadapt.models import Recording
 
 LOG_LEVEL = "INFO"
 

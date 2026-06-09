@@ -2,9 +2,9 @@
 
 from pynput import keyboard, mouse
 
-from openadapt.common import KEY_EVENTS, MOUSE_EVENTS
-from openadapt.custom_logger import logger
-from openadapt.models import ActionEvent
+from legacy.openadapt.common import KEY_EVENTS, MOUSE_EVENTS
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import ActionEvent
 
 
 def play_mouse_event(event: ActionEvent, mouse_controller: mouse.Controller) -> None:

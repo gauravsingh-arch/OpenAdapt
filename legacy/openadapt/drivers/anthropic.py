@@ -5,9 +5,9 @@ from pprint import pprint
 from PIL import Image
 import anthropic
 
-from openadapt import cache
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt import cache
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 MAX_TOKENS = 4096
 # from https://docs.anthropic.com/claude/docs/vision
@@ -24,7 +24,7 @@ def create_payload(
     max_tokens: int | None = None,
 ) -> dict:
     """Creates the payload for the Anthropic API request with image support."""
-    from openadapt import utils
+    from legacy.openadapt import utils
 
     messages = []
 

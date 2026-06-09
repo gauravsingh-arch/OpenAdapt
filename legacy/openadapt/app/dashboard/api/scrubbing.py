@@ -7,9 +7,9 @@ import time
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
-from openadapt.config import config
-from openadapt.privacy.providers import ScrubProvider
-from openadapt.scrub import get_scrubbing_process, scrub
+from legacy.openadapt.config import config
+from legacy.openadapt.privacy.providers import ScrubProvider
+from legacy.openadapt.scrub import get_scrubbing_process, scrub
 
 
 class ScrubbingAPI:

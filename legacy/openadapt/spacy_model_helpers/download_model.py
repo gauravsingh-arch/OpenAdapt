@@ -8,8 +8,8 @@ import shutil
 import git
 import requests
 
-from openadapt import PROJECT_DIR
-from openadapt.build_utils import get_root_dir_path
+from legacy.openadapt import PROJECT_DIR
+from legacy.openadapt.build_utils import get_root_dir_path
 
 
 def download_spacy_model(model_name: str) -> None:

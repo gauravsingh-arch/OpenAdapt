@@ -6,7 +6,7 @@ import time
 if TYPE_CHECKING:
     import pywinauto
 
-from openadapt.custom_logger import logger
+from legacy.openadapt.custom_logger import logger
 
 
 def get_active_window_state(read_window_data: bool) -> dict:

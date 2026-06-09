@@ -15,8 +15,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.schema import MetaData
 import sqlalchemy as sa
 
-from openadapt.config import RECORDING_DIR_PATH, config
-from openadapt.custom_logger import logger
+from legacy.openadapt.config import RECORDING_DIR_PATH, config
+from legacy.openadapt.custom_logger import logger
 
 NAMING_CONVENTION = {
     "ix": "ix_%(column_0_label)s",
@@ -35,7 +35,7 @@ class BaseModel(DictableModel):
     def __repr__(self) -> str:
         """Return a string representation of the model object."""
         # avoid circular import
-        from openadapt.utils import EMPTY, row2dict
+        from legacy.openadapt.utils import EMPTY, row2dict
 
         ignore_attrs = getattr(self, "_repr_ignore_attrs", [])
 

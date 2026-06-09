@@ -14,8 +14,8 @@ from Quartz import CGMainDisplayID  # type: ignore # noqa
 import AVFoundation as AVF  # type: ignore # noqa
 import objc  # type: ignore # noqa
 
-from openadapt.config import CAPTURE_DIR_PATH
-from openadapt.custom_logger import logger
+from legacy.openadapt.config import CAPTURE_DIR_PATH
+from legacy.openadapt.custom_logger import logger
 
 
 class Capture:

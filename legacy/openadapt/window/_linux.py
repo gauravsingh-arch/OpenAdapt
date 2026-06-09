@@ -3,7 +3,7 @@ import xcffib.xproto
 import pickle
 import time
 
-from openadapt.custom_logger import logger
+from legacy.openadapt.custom_logger import logger
 
 # Global X server connection
 _conn = None

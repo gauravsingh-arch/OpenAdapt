@@ -22,9 +22,9 @@ import matplotlib.axes as axes
 import matplotlib.pyplot as plt
 import numpy as np
 
-from openadapt.custom_logger import logger
-from openadapt.models import Recording, Screenshot
-from openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import Recording, Screenshot
+from legacy.openadapt.strategies.base import BaseReplayStrategy
 
 CHECKPOINT_URL_BASE = "https://dl.fbaipublicfiles.com/segment_anything/"
 CHECKPOINT_URL_BY_NAME = {

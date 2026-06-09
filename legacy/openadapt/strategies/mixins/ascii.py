@@ -8,9 +8,9 @@ Usage:
 
 from ascii_magic import AsciiArt
 
-from openadapt.custom_logger import logger
-from openadapt.models import Recording, Screenshot
-from openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import Recording, Screenshot
+from legacy.openadapt.strategies.base import BaseReplayStrategy
 
 COLUMNS = 120
 WIDTH_RATIO = 2.2

@@ -5,7 +5,7 @@ from sys import platform
 import pyaudio
 import wave
 
-from openadapt.config import CAPTURE_DIR_PATH
+from legacy.openadapt.config import CAPTURE_DIR_PATH
 
 
 class Capture:

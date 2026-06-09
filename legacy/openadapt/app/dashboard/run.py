@@ -6,9 +6,9 @@ import pathlib
 import subprocess
 import webbrowser
 
-from openadapt.build_utils import is_running_from_executable
-from openadapt.config import POSTHOG_HOST, POSTHOG_PUBLIC_KEY, config
-from openadapt.custom_logger import logger
+from legacy.openadapt.build_utils import is_running_from_executable
+from legacy.openadapt.config import POSTHOG_HOST, POSTHOG_PUBLIC_KEY, config
+from legacy.openadapt.custom_logger import logger
 
 from .api.index import run_app
 

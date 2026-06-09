@@ -10,9 +10,9 @@ import threading
 from PIL import Image
 import av
 
-from openadapt import utils
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt import utils
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 
 def get_video_file_path(recording_timestamp: float) -> str:

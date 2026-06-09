@@ -14,11 +14,11 @@ from sqlalchemy.orm import joinedload, subqueryload
 import psutil
 import sqlalchemy as sa
 
-from openadapt import utils
-from openadapt.config import DATABASE_LOCK_FILE_PATH, config
-from openadapt.custom_logger import logger
-from openadapt.db.db import Session, get_read_only_session_maker
-from openadapt.models import (
+from legacy.openadapt import utils
+from legacy.openadapt.config import DATABASE_LOCK_FILE_PATH, config
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db.db import Session, get_read_only_session_maker
+from legacy.openadapt.models import (
     ActionEvent,
     AudioInfo,
     BrowserEvent,
@@ -30,7 +30,7 @@ from openadapt.models import (
     WindowEvent,
     copy_sa_instance,
 )
-from openadapt.privacy.base import ScrubbingProvider
+from legacy.openadapt.privacy.base import ScrubbingProvider
 
 BATCH_SIZE = 1
 
@@ -300,7 +300,7 @@ def delete_recording(session: SaSession, recording: Recording) -> None:
 
     utils.delete_performance_plot(recording_timestamp)
 
-    from openadapt.video import delete_video_file
+    from legacy.openadapt.video import delete_video_file
 
     delete_video_file(recording_timestamp)
 
@@ -822,7 +822,7 @@ def copy_recording(session: SaSession, recording_id: int) -> int:
     Returns:
         int: The id of the new recording.
     """
-    from openadapt.events import get_events
+    from legacy.openadapt.events import get_events
 
     try:
         recording = session.query(Recording).get(recording_id)

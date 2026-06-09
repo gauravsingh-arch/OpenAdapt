@@ -6,8 +6,8 @@ Module: __init__.py
 from typing import Any
 import sys
 
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 if sys.platform == "darwin":
     from . import _macos as impl

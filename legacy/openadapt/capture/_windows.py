@@ -8,7 +8,7 @@ import wave
 from screen_recorder_sdk import screen_recorder
 import pyaudio
 
-from openadapt.config import config
+from legacy.openadapt.config import config
 
 
 class Capture:

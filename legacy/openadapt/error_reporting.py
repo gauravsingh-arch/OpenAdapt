@@ -9,8 +9,8 @@ import git
 import sentry_sdk
 import webbrowser
 
-from openadapt.build_utils import is_running_from_executable
-from openadapt.config import PARENT_DIR_PATH, config
+from legacy.openadapt.build_utils import is_running_from_executable
+from legacy.openadapt.config import PARENT_DIR_PATH, config
 
 
 def configure_error_reporting() -> None:
@@ -39,7 +39,7 @@ def configure_error_reporting() -> None:
 def show_alert() -> None:
     """Show an alert to the user."""
     # TODO: move to config
-    from openadapt.app.tray import ICON_PATH
+    from legacy.openadapt.app.tray import ICON_PATH
 
     msg = QMessageBox()
     msg.setIcon(QMessageBox.Warning)

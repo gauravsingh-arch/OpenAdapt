@@ -10,8 +10,8 @@ from PIL import Image
 import fire
 import gradio_client
 
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 
 def save_image_to_temp_file(img: Image.Image) -> str:

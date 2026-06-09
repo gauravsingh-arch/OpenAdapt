@@ -12,10 +12,10 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont
 import matplotlib.pyplot as plt
 import numpy as np
 
-from openadapt import common, models, utils
-from openadapt.config import PERFORMANCE_PLOTS_DIR_PATH, config
-from openadapt.custom_logger import logger
-from openadapt.models import ActionEvent
+from legacy.openadapt import common, models, utils
+from legacy.openadapt.config import PERFORMANCE_PLOTS_DIR_PATH, config
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import ActionEvent
 
 
 # TODO: move parameters to config
@@ -356,7 +356,7 @@ def display_event(
             if spacy.util.is_package(
                 config.SPACY_MODEL_NAME
             ):  # Check if the model is installed
-                from openadapt.privacy.providers.presidio import (
+                from legacy.openadapt.privacy.providers.presidio import (
                     PresidioScrubbingProvider,
                 )
 
@@ -398,7 +398,7 @@ def plot_performance(
     if dark_mode:
         plt.style.use("dark_background")
 
-    from openadapt.db import crud
+    from legacy.openadapt.db import crud
 
     session = crud.get_new_session(read_only=True)
 
@@ -838,7 +838,7 @@ def get_marked_image(
         Image.Image: The marked image, where marks and/or masks are applied based on
         the specified confidence and IoU thresholds and the include flags.
     """
-    from openadapt import contrib
+    from legacy.openadapt import contrib
 
     image_arr = np.asarray(original_image)
 

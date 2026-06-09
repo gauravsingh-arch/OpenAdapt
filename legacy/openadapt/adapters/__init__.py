@@ -2,7 +2,7 @@
 
 from types import ModuleType
 
-from openadapt.config import config
+from legacy.openadapt.config import config
 
 from . import prompt, replicate, som, ultralytics
 

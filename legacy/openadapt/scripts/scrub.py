@@ -25,8 +25,8 @@ import math
 from moviepy.editor import VideoClip, VideoFileClip
 from PIL import Image
 
-from openadapt.build_utils import redirect_stdout_stderr
-from openadapt.custom_logger import logger
+from legacy.openadapt.build_utils import redirect_stdout_stderr
+from legacy.openadapt.custom_logger import logger
 
 with redirect_stdout_stderr():
     from tqdm import tqdm
@@ -34,8 +34,8 @@ with redirect_stdout_stderr():
 
 import numpy as np
 
-from openadapt import scrub, utils
-from openadapt.config import config
+from legacy.openadapt import scrub, utils
+from legacy.openadapt.config import config
 
 
 def _make_frame(

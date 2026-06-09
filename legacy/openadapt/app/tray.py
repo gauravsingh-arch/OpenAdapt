@@ -33,20 +33,20 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from openadapt.app import quick_record, stop_record, FPATH
-from openadapt.app.dashboard.run import cleanup as cleanup_dashboard
-from openadapt.app.dashboard.run import run as run_dashboard
-from openadapt.build_utils import is_running_from_executable
-from openadapt.custom_logger import logger
-from openadapt.db import crud
-from openadapt.models import Recording
-from openadapt.replay import replay
-from openadapt.strategies.base import BaseReplayStrategy
-from openadapt.utils import WrapStdout, get_posthog_instance
-from openadapt.visualize import main as visualize
+from legacy.openadapt.app import quick_record, stop_record, FPATH
+from legacy.openadapt.app.dashboard.run import cleanup as cleanup_dashboard
+from legacy.openadapt.app.dashboard.run import run as run_dashboard
+from legacy.openadapt.build_utils import is_running_from_executable
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db import crud
+from legacy.openadapt.models import Recording
+from legacy.openadapt.replay import replay
+from legacy.openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.utils import WrapStdout, get_posthog_instance
+from legacy.openadapt.visualize import main as visualize
 
 # ensure all strategies are registered
-import openadapt.strategies  # noqa: F401
+import legacy.openadapt.strategies  # noqa: F401
 
 ICON_PATH = os.path.join(FPATH, "assets", "logo.png")
 

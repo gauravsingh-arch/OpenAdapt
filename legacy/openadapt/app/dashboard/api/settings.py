@@ -4,7 +4,7 @@ from typing import Any, Literal
 
 from fastapi import APIRouter
 
-from openadapt.config import Config, config, persist_config
+from legacy.openadapt.config import Config, config, persist_config
 
 
 class SettingsAPI:

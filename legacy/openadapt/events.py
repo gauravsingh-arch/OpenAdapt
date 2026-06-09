@@ -7,9 +7,9 @@ import time
 from scipy.spatial import distance
 import numpy as np
 
-from openadapt import browser, common, models, utils
-from openadapt.custom_logger import logger
-from openadapt.db import crud
+from legacy.openadapt import browser, common, models, utils
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db import crud
 
 MAX_PROCESS_ITERS = 1
 MOUSE_MOVE_EVENT_MERGE_CLICK_DISTANCE_THRESHOLD = 5

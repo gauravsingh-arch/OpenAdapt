@@ -2,8 +2,8 @@
 
 from fastapi import APIRouter
 
-from openadapt.custom_logger import logger
-from openadapt.db import crud
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db import crud
 
 
 class ActionEventsAPI:

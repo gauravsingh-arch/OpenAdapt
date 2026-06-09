@@ -10,16 +10,16 @@ import os
 import re
 import subprocess
 
-from openadapt.build_utils import redirect_stdout_stderr
-from openadapt.custom_logger import logger
+from legacy.openadapt.build_utils import redirect_stdout_stderr
+from legacy.openadapt.custom_logger import logger
 
 with redirect_stdout_stderr():
     import fire
 
-from openadapt import db, utils
-from openadapt.config import RECORDING_DIR_PATH
-from openadapt.db import crud
-from openadapt.video import get_video_file_path
+from legacy.openadapt import db, utils
+from legacy.openadapt.config import RECORDING_DIR_PATH
+from legacy.openadapt.db import crud
+from legacy.openadapt.video import get_video_file_path
 
 LOG_LEVEL = "INFO"
 utils.configure_logging(logger, LOG_LEVEL)

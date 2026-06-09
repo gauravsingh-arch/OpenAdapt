@@ -5,7 +5,7 @@ from typing import List
 from PIL import Image
 from pydantic import BaseModel  # pylint: disable=no-name-in-module
 
-from openadapt.config import config
+from legacy.openadapt.config import config
 
 
 class Modality:  # pylint: disable=too-few-public-methods

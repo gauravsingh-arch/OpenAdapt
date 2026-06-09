@@ -8,13 +8,13 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 
-from openadapt.app.dashboard.api.action_events import ActionEventsAPI
-from openadapt.app.dashboard.api.recordings import RecordingsAPI
-from openadapt.app.dashboard.api.scrubbing import ScrubbingAPI
-from openadapt.app.dashboard.api.settings import SettingsAPI
-from openadapt.build_utils import is_running_from_executable
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt.app.dashboard.api.action_events import ActionEventsAPI
+from legacy.openadapt.app.dashboard.api.recordings import RecordingsAPI
+from legacy.openadapt.app.dashboard.api.scrubbing import ScrubbingAPI
+from legacy.openadapt.app.dashboard.api.settings import SettingsAPI
+from legacy.openadapt.build_utils import is_running_from_executable
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 app = FastAPI()
 

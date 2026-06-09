@@ -9,7 +9,7 @@ import pathlib
 import time
 
 from legacy.openadapt.record import record
-from openadapt.utils import WrapStdout
+from legacy.openadapt.utils import WrapStdout
 
 __all__ = [
     "RecordProc",

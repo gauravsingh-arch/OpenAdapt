@@ -8,9 +8,9 @@ import fire
 import replicate
 import requests
 
-from openadapt import cache, utils
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt import cache, utils
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 
 @cache.cache()

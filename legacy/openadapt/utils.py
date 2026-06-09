@@ -23,8 +23,8 @@ from PIL import Image, ImageEnhance
 from posthog import Posthog
 import multiprocessing_utils
 
-from openadapt.build_utils import is_running_from_executable, redirect_stdout_stderr
-from openadapt.custom_logger import logger
+from legacy.openadapt.build_utils import is_running_from_executable, redirect_stdout_stderr
+from legacy.openadapt.custom_logger import logger
 
 with redirect_stdout_stderr():
     import fire
@@ -42,15 +42,15 @@ if sys.platform == "win32":
     mss.windows.CAPTUREBLT = 0
 
 
-from openadapt.config import (
+from legacy.openadapt.config import (
     PERFORMANCE_PLOTS_DIR_PATH,
     POSTHOG_HOST,
     POSTHOG_PUBLIC_KEY,
     config,
 )
-from openadapt.custom_logger import filter_log_messages
-from openadapt.db import db
-from openadapt.models import ActionEvent
+from legacy.openadapt.custom_logger import filter_log_messages
+from legacy.openadapt.db import db
+from legacy.openadapt.models import ActionEvent
 
 # TODO: move to constants.py
 EMPTY = (None, [], {}, "")
@@ -481,7 +481,7 @@ def get_strategy_class_by_name() -> dict:
     Returns:
         dict: A dictionary of strategy classes.
     """
-    from openadapt.strategies import BaseReplayStrategy
+    from legacy.openadapt.strategies import BaseReplayStrategy
 
     strategy_classes = BaseReplayStrategy.__subclasses__()
     class_by_name = {cls.__name__: cls for cls in strategy_classes}

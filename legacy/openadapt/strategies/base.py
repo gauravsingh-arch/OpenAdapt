@@ -7,8 +7,8 @@ import time
 from pynput import keyboard, mouse
 import numpy as np
 
-from openadapt import adapters, models, playback, utils
-from openadapt.custom_logger import logger
+from legacy.openadapt import adapters, models, playback, utils
+from legacy.openadapt.custom_logger import logger
 
 CHECK_ACTION_COMPLETE = False
 MAX_FRAME_TIMES = 1000

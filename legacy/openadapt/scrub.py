@@ -8,10 +8,10 @@ import time
 
 import sqlalchemy as sa
 
-from openadapt.custom_logger import logger
-from openadapt.db import crud
-from openadapt.models import ActionEvent, Recording, Screenshot, WindowEvent
-from openadapt.privacy.providers import ScrubProvider
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.db import crud
+from legacy.openadapt.models import ActionEvent, Recording, Screenshot, WindowEvent
+from legacy.openadapt.privacy.providers import ScrubProvider
 
 
 class ScrubbingProc:

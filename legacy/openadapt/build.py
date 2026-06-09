@@ -25,7 +25,7 @@ import tokencost
 import ultralytics
 import whisper
 
-from openadapt.config import POSTHOG_HOST, POSTHOG_PUBLIC_KEY
+from legacy.openadapt.config import POSTHOG_HOST, POSTHOG_PUBLIC_KEY
 
 if sys.platform == "win32":
     import screen_recorder_sdk

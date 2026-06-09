@@ -4,7 +4,7 @@ This module provides a caching decorator for functions and a command line interf
 managing the cache.
 
 Python Example Usage:
-    from openadapt.cache import cache
+    from legacy.openadapt.cache import cache
 
     @cache()
     def my_function():
@@ -26,8 +26,8 @@ import time
 from joblib import Memory
 import fire
 
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 
 def default(val: Any, default: Any) -> Any:

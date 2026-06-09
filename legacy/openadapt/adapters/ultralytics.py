@@ -20,7 +20,7 @@ from PySide6.QtCore import Qt  # noqa
 import matplotlib
 import numpy as np
 
-from openadapt.custom_logger import logger
+from legacy.openadapt.custom_logger import logger
 
 matplotlib.use("Qt5Agg")
 
@@ -31,7 +31,7 @@ from ultralytics.models.sam import Predictor as SAMPredictor
 import fire
 import ultralytics
 
-from openadapt import cache
+from legacy.openadapt import cache
 
 FASTSAM_MODEL_NAMES = (
     "FastSAM-x.pt",

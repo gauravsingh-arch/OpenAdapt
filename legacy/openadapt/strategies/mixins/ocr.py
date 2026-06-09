@@ -14,9 +14,9 @@ from rapidocr_onnxruntime import RapidOCR
 from sklearn.cluster import DBSCAN
 import pandas as pd
 
-from openadapt.custom_logger import logger
-from openadapt.models import Recording, Screenshot
-from openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import Recording, Screenshot
+from legacy.openadapt.strategies.base import BaseReplayStrategy
 
 # TODO: group into sections via layout analysis; see:
 # github.com/RapidAI/RapidOCR/blob/main/python/rapid_structure/docs/README_Layout.md

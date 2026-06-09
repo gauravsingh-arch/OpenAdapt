@@ -13,9 +13,9 @@ from sumy.summarizers.lsa import LsaSummarizer
 from sumy.utils import get_stop_words
 import nltk
 
-from openadapt.custom_logger import logger
-from openadapt.models import Recording
-from openadapt.strategies.base import BaseReplayStrategy
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import Recording
+from legacy.openadapt.strategies.base import BaseReplayStrategy
 
 
 class SummaryReplayStrategyMixin(BaseReplayStrategy):

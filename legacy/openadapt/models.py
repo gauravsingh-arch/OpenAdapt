@@ -15,12 +15,12 @@ from PIL import Image, ImageChops
 import numpy as np
 import sqlalchemy as sa
 
-from openadapt.config import config
-from openadapt.custom_logger import logger
-from openadapt.drivers import anthropic
-from openadapt.db import db
-from openadapt.privacy.base import ScrubbingProvider, TextScrubbingMixin
-from openadapt.privacy.providers import ScrubProvider
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.drivers import anthropic
+from legacy.openadapt.db import db
+from legacy.openadapt.privacy.base import ScrubbingProvider, TextScrubbingMixin
+from legacy.openadapt.privacy.providers import ScrubProvider
 
 EMPTY_VALS = [None, "", [], (), {}]
 
@@ -106,8 +106,8 @@ class Recording(db.Base):
     @property
     def processed_action_events(self) -> list:
         """Get the processed action events for the recording."""
-        from openadapt import events
-        from openadapt.db import crud
+        from legacy.openadapt import events
+        from legacy.openadapt.db import crud
 
         if not self._processed_action_events:
             session = crud.get_new_session(read_only=True)
@@ -564,7 +564,7 @@ class ActionEvent(db.Base):
         Returns:
             str: The description of the action event.
         """
-        from openadapt.plotting import display_event
+        from legacy.openadapt.plotting import display_event
 
         image = display_event(
             self,
@@ -660,7 +660,7 @@ class WindowEvent(db.Base):
         Returns:
             (WindowEvent) the active window event.
         """
-        from openadapt import window
+        from legacy.openadapt import window
 
         return WindowEvent(**window.get_active_window_data(include_window_data))
 
@@ -898,7 +898,7 @@ class FrameCache:
             None
         """
         # avoid circular import
-        from openadapt import video
+        from legacy.openadapt import video
 
         # Ensure the dictionary for this video file is initialized
         if video_file_path not in self.frames:
@@ -983,7 +983,7 @@ class Screenshot(db.Base):
                 self._image = self.convert_binary_to_png(self.png_data)
             else:
                 # avoid circular import
-                from openadapt import video
+                from legacy.openadapt import video
 
                 video_file_path = video.get_video_file_path(self.recording_timestamp)
                 if FrameCache.ENABLED:
@@ -1214,4 +1214,4 @@ def copy_sa_instance(sa_instance: db.Base, **kwargs: dict) -> db.Base:
 
 
 # avoid circular import
-from openadapt import utils  # noqa
+from legacy.openadapt import utils  # noqa

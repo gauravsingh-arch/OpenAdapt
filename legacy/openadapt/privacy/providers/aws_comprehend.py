@@ -6,10 +6,10 @@ from botocore import client
 from botocore.exceptions import ClientError
 import boto3
 
-from openadapt.config import config
-from openadapt.custom_logger import logger
-from openadapt.privacy.base import Modality, ScrubbingProvider, TextScrubbingMixin
-from openadapt.privacy.providers import ScrubProvider
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.privacy.base import Modality, ScrubbingProvider, TextScrubbingMixin
+from legacy.openadapt.privacy.providers import ScrubProvider
 
 
 # snippet-start:[python.example_code.comprehend.ComprehendDetect

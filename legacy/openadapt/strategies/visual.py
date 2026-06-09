@@ -51,8 +51,8 @@ import time
 from PIL import Image, ImageDraw
 import numpy as np
 
-from openadapt import adapters, common, models, plotting, strategies, utils, vision
-from openadapt.custom_logger import logger
+from legacy.openadapt import adapters, common, models, plotting, strategies, utils, vision
+from legacy.openadapt.custom_logger import logger
 
 DEBUG = False
 DEBUG_REPLAY = False

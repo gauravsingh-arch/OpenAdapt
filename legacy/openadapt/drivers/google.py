@@ -9,9 +9,9 @@ from PIL import Image
 import fire
 import google.generativeai as genai
 
-from openadapt import cache
-from openadapt.config import config
-from openadapt.custom_logger import logger
+from legacy.openadapt import cache
+from legacy.openadapt.config import config
+from legacy.openadapt.custom_logger import logger
 
 MAX_TOKENS = 2**20  # 1048576
 MODEL_NAME = [

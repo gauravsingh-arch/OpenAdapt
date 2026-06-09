@@ -13,7 +13,7 @@ from pydantic import field_validator
 from pydantic.fields import FieldInfo
 from pydantic_settings import BaseSettings, PydanticBaseSettingsSource
 
-from openadapt.build_utils import get_root_dir_path
+from legacy.openadapt.build_utils import get_root_dir_path
 
 CONFIG_DEFAULTS_FILE_PATH = (
     pathlib.Path(__file__).parent / "config.defaults.json"

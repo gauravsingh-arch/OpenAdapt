@@ -5,9 +5,9 @@ Uses FastSAM for segmentation.
 
 from pprint import pformat
 
-from openadapt import adapters, common, models, strategies, utils
-from openadapt.custom_logger import logger
-from openadapt.strategies.visual import (
+from legacy.openadapt import adapters, common, models, strategies, utils
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.strategies.visual import (
     add_active_segment_descriptions,
     apply_replay_instructions,
     get_window_segmentation,

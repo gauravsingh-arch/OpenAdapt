@@ -24,10 +24,10 @@ from pynput import keyboard, mouse
 from pympler import tracker
 import av
 
-from openadapt.browser import set_browser_mode
-from openadapt.build_utils import redirect_stdout_stderr
-from openadapt.custom_logger import logger
-from openadapt.models import Recording
+from legacy.openadapt.browser import set_browser_mode
+from legacy.openadapt.build_utils import redirect_stdout_stderr
+from legacy.openadapt.custom_logger import logger
+from legacy.openadapt.models import Recording
 
 with redirect_stdout_stderr():
     from tqdm import tqdm
@@ -39,11 +39,11 @@ import soundfile
 import websockets.sync.server
 import whisper
 
-from openadapt import plotting, utils, video, window
-from openadapt.config import config
-from openadapt.db import crud
-from openadapt.extensions import synchronized_queue as sq
-from openadapt.models import ActionEvent
+from legacy.openadapt import plotting, utils, video, window
+from legacy.openadapt.config import config
+from legacy.openadapt.db import crud
+from legacy.openadapt.extensions import synchronized_queue as sq
+from legacy.openadapt.models import ActionEvent
 
 Event = namedtuple("Event", ("timestamp", "type", "data"))
 

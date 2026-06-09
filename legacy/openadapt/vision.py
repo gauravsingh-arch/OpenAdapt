@@ -8,8 +8,8 @@ from skimage.metrics import structural_similarity as ssim
 import cv2
 import numpy as np
 
-from openadapt import cache
-from openadapt.custom_logger import logger
+from legacy.openadapt import cache
+from legacy.openadapt.custom_logger import logger
 
 
 @cache.cache()

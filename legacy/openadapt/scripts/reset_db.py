@@ -9,7 +9,7 @@ Module: reset_db.py
 from subprocess import PIPE, run
 import os
 
-from openadapt.config import config
+from legacy.openadapt.config import config
 
 
 def reset_db() -> None:
